@@ -1,0 +1,6 @@
+{
+    "python.pythonPath": "/home/mo/miniconda/envs/algotrader/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.condaPath": "/home/mo/miniconda/bin/conda",
+    "python.defaultInterpreterPath": "/home/mo/miniconda/envs/algotrader/bin/python"
+}

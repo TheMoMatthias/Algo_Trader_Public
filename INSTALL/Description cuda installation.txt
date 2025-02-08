@@ -1,0 +1,121 @@
+1. Install wsl and change version to 2 
+
+open cmd and type:
+
+* wsl --install
+* wsl --set-default-version 2    OR 	sl --set-default-version Ubuntu 2
+
+__________________________________
+
+2. Run the below for installing the environment:
+
+# Open your WSL terminal (e.g., Ubuntu)
+
+# Install dos2unix if not already installed
+sudo apt-get install dos2unix
+
+# Convert the script line endings from CRLF to LF
+dos2unix /mnt/c/Users/mauri/Documents/Trading\ Bot/Python/Crypto\ Bot/setup_env.sh
+
+# Navigate to the script directory
+cd /mnt/c/Users/mauri/Documents/Trading\ Bot/Python/Crypto\ Bot
+
+# Make the script executable
+chmod +x INSTALL/setup_env.sh
+
+# Execute the script
+./INSTALL/setup_env.sh
+
+
+___________________________________
+
+3. Initializing the environment
+
+3.1 Through WSL
+
+# Install dos2unix if not already installed
+sudo apt-get install dos2unix
+
+# Convert the script line endings from CRLF to LF
+dos2unix /mnt/c/Users/mauri/Documents/Trading\ Bot/Python/Crypto\ Bot/activate_algotrader_linux_environment.sh
+
+# Navigate to the script directory
+cd /mnt/c/Users/mauri/Documents/Trading\ Bot/Python/Crypto\ Bot
+
+# Make the script executable
+chmod +x activate_algotrader_linux_environment.sh
+
+# Execute the script
+./activate_algotrader_linux_environment.sh
+
+
+3.2 Through bat file 
+
+@echo off
+REM Ensure the path to Miniconda is correct
+SET "CONDA_HOME=%USERPROFILE%\miniconda"
+SET "PATH=%CONDA_HOME%\Scripts;%CONDA_HOME%\Library\bin;%CONDA_HOME%\bin;%PATH%"
+
+REM Activate the conda environment
+call conda activate algotrader
+
+REM Run your Python script
+python your_script.py
+
+REM Deactivate the conda environment
+call conda deactivate
+
+
+3.3. Through shell linux/wsl
+
+#!/bin/bash
+# Ensure the path to Miniconda is correct
+export PATH="$HOME/miniconda/bin:$PATH"
+source "$HOME/miniconda/etc/profile.d/conda.sh"
+
+# Activate the conda environment
+conda activate algotrader
+
+# Run your Python script
+python your_script.py
+
+# Deactivate the conda environment
+conda deactivate
+
+
+___________________________________
+
+
+4. Uninstall wsl / Ubuntu
+
+* Open cmd and type wsl --unregister <DistributionName> <-- wsl --unregister Ubuntu-20.04
+* Go to to apps and uninstall ubuntu
+* go to system components and reset windows subssystem for linux
+* go to control panel --> Programs --> Turn Windows features on or off --> uncheck windows subsystem for linux & and for Virtual Machine platform --> click ok 
+* Open PowerShell (as administrator) and run the following command to disable WSL: Disable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux 
+* Open a command prompt (as administrator) and run the following command: dism /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux /norestart
+* Check the C:\Users\<YourUsername>\AppData\Local\Packages directory for any WSL-related folders, and delete them if there are any
+* In command prompt: sfc /scannow
+* navigate to %localappdata%\Packages and delete folders CanonicalGroupLimited.UbuntuonWindows and MicrosoftCorporationII.WindowsSubsystemForLinux_
+
+If available run registry cleaner
+
+
+
+
+####################### Additional links  #######################################
+
+
+Correct cudnn versions can be sourced from here:
+https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-x86_64/
+
+
+
+# Install Clang 16
+print_step "Installing Clang 16..."
+wget https://apt.llvm.org/llvm.sh
+check_success
+chmod u+x llvm.sh
+check_success
+sudo ./llvm.sh 16
+check_success

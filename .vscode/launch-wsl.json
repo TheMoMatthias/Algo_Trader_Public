@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File (WSL)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "python": "/home/mo/miniconda/envs/algotrader/bin/python",
+            "preLaunchTask": "activate-algotrader-wsl",
+            "timeout": 6000000,
+            "windows": false,
+            "wsl": true
+        }
+    ]
+}

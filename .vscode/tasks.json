@@ -1,0 +1,16 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "activate-algotrader-wsl",
+            "type": "shell",
+            "command": "source /home/mo/miniconda/etc/profile.d/conda.sh && conda activate algotrader",
+            "problemMatcher": [],
+            "options": {
+                "shell": {
+                    "executable": "/bin/bash"
+                }
+            }
+        }
+    ]
+}

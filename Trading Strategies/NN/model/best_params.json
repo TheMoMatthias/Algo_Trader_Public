@@ -1,0 +1,1 @@
+{"dropout_rate_lstm": 0.225, "dropout_rate_dense": 0.525, "dropout_rate_multihead": 0.17500000000000002, "learning_rate": 0.0012215886994104822, "regularization_rate": 1.2647353681883716e-05, "d_ff": 512}

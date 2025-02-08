@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File (Windows)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "pythonPath": "${workspaceFolder}\\venv\\Scripts\\python.exe",
+            "justMyCode": true,
+            "stopOnEntry": false,
+            "showReturnValue": true
+        }
+    ]
+}
